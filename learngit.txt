@@ -16,3 +16,7 @@ git branch "dev"
 git checkout master
 git merge dev
 git branch -d "dev"
+git remote add origin git@github.com:herlinechen/MyRepository.git
+git push -u origin master
+git push origin master
+
