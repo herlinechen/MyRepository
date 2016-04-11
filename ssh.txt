@@ -1,0 +1,3 @@
+$ cd /C/Users/user/.ssh
+$ ssh-keygen -t rsa -C "herlinechen@163.com"
+$ ssh-keygen -t rsa -C "chenqiaoling@gyyx.cn"
