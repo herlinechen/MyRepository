@@ -12,7 +12,7 @@ git reset --hard 3628164
 cat readme2.txt
 git checkout -- 
 git checkout -b "dev"
-git branch
+git branch "dev"
 git checkout master
 git merge dev
 git branch -d "dev"
