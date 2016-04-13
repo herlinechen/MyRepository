@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>从URL获取参数</title>
+		<style>
+			p span{color:red;}
+			pre{padding:10px;background-color:#eee;}
+		</style>
+	</head>
+	<body>
+		<div>
+			<a  href="getQuery.html?aaa=111&bbb=222">url上带参数</a>
+			<p>url上所带参数及其值有 <span id="queryTxt">1234</span></p>
+			<p>getQuery函数需要传入已知的url上的参数名</p>
+			<pre>
+获取页面url:  window.location.href
+获取页面url上问号后的部分： window.location.search
+			</pre>
+			<p>页面url <span id="pageUrl"></span></p>
+			<p>页面url参数 <span id="pageSearch"></span></p>
+			<pre>
+/*从url获取参数*/
+function getQuery(name, str) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"),
+        r = !str ? window.location.search.substr(1).match(reg) : str.substr(1).match(reg);
+    if (r != null) {
+        return unescape(r[2]);
+    }
+    return null;
+}
+			</pre>
+		</div>
+		<script type="text/javascript">
+			/*从url获取参数*/
+			function getQuery(name, str) {
+			    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"),
+			        r = !str ? window.location.search.substr(1).match(reg) : str.substr(1).match(reg);
+			    if (r != null) {
+			        return unescape(r[2]);
+			    }
+			    return null;
+			}
+
+			var par = decodeURIComponent(window.location.search);
+			var aVal= getQuery("aaa",par);
+			var bVal = getQuery("bbb",par);
+			var queryStr = "aaa: "+aVal +"   bbb: "+bVal;
+			document.getElementById("queryTxt").innerHTML = queryStr;
+			document.getElementById("pageUrl").innerHTML = window.location.href;
+			document.getElementById("pageSearch").innerHTML = window.location.search.substr(1);
+			console.log(window.location);
+		</script>
+	</body>
+</html>
