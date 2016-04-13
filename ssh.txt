@@ -1,3 +1,7 @@
 $ cd /C/Users/user/.ssh
 $ ssh-keygen -t rsa -C "herlinechen@163.com"
 $ ssh-keygen -t rsa -C "chenqiaoling@gyyx.cn"
+$ ssh-agent bash --login -i
+$ ssh-add /C/Users/user/.ssh/id_rsa_github
+$ ssh-add /C/Users/user/.ssh/id_rsa_gitlab
+$ ssh -T git@github.com

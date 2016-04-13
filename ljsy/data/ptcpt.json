@@ -1,0 +1,10 @@
+{
+	"isSuccess":true,
+	"message":"true",
+	"data":[
+		{"code":14,"userOpenid":"obPaujkanyX4iQidv2nbxbjDdbjI","musicPath":"music/3.mp3","music":{"code":14,"musicPath":"music/3.mp3","musicStatus":null},"approval":0,"participatTime":null,"saveTime":"2016-04-09 17:14:36.0","isDelete":0,"status":2,"picture":[{"code":17,"path":"img/Cg8RA1cIyACAd96vAAKlIYizd9I647.jpg","workCode":"14"},{"code":18,"path":"img/Cg8RA1cIyCaAV9iEAAMtEfV8I4U239.jpg","workCode":"14"},{"code":19,"path":"img/Cg8RA1cIyCmAOFMQAAOIpOy4t3Y124.jpg","workCode":"14"}],"openidNull":false},
+		{"code":15,"userOpenid":"obPaujkanyX4iQidv2nbxbjDdbjI","musicPath":"music/3.mp3","music":{"code":15,"musicPath":"music/3.mp3","musicStatus":null},"approval":0,"participatTime":null,"saveTime":"2016-04-09 17:15:04.0","isDelete":0,"status":2,"picture":[{"code":20,"path":"img/Cg8RA1cIyACAd96vAAKlIYizd9I647.jpg","workCode":"15"},{"code":21,"path":"img/Cg8RA1cIyCKAWbhZAAMtEfV8I4U014.jpg","workCode":"15"},{"code":22,"path":"img/Cg8RA1cIyD6AC5XdAAOIpOy4t3Y407.jpg","workCode":"15"}],"openidNull":false},
+		{"code":95,"userOpenid":"obPaujkanyX4iQidv2nbxbjDdbjI","musicPath":"music/4.mp3","music":{"code":95,"musicPath":"music/4.mp3","musicStatus":null},"approval":4,"participatTime":null,"saveTime":"2016-04-12 11:35:11.0","isDelete":0,"status":3,"picture":[{"code":128,"path":"img/Cg8RA1cMbO-AarQKAAJX8LpgVQ8061.jpg","workCode":"95"},{"code":129,"path":"img/Cg8RA1cMbPCABnjlAAJo9nTMk3M204.jpg","workCode":"95"},{"code":130,"path":"img/Cg8RA1cMbPGAGmWZAAJgvgHLwbY617.jpg","workCode":"95"}],"openidNull":false},
+		{"code":102,"userOpenid":"obPaujkanyX4iQidv2nbxbjDdbjI","musicPath":"music/3.mp3","music":{"code":102,"musicPath":"music/3.mp3","musicStatus":null},"approval":0,"participatTime":null,"saveTime":"2016-04-12 19:32:00.0","isDelete":0,"status":0,"picture":[{"code":151,"path":"img/Cg8RA1cLUxCAeTljAAFgRtNcUFE251.jpg","workCode":"102"},{"code":152,"path":"img/Cg8RA1cM3LGAQdzJAAIGYpJZbg8557.jpg","workCode":"102"},{"code":153,"path":"img/Cg8RA1cM3LKAQQsLAAMS0wiKHTE122.jpg","workCode":"102"}],"openidNull":false}
+	]
+}

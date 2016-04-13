@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="format-detection" content="telephone=no, email=no" />
+		<title>玩家作品</title>
+		<link rel="stylesheet" href="css/normalize.css" />
+		<link rel="stylesheet" href="css/main.css" />		
+	</head>
+	<body>
+		<header class="header">
+			<img src="images/headerbg.jpg" />
+			<a class="btn btn_myworklist" href="#"><img src="images/btn4_1.png" /></a>
+			<a class="share_btn" href="#"><img src="images/shareicon.png" /></a>
+		</header>
+		<section class="content">
+			<h1 class="title1"><img src="images/title1.png" /></h1>
+			<ul id="myWorkList" class="worklist">
+				<li>
+					<a href="#"><img src="images/works2.jpg" /></a>
+					<a class="dele" href="#"><img src="images/close.png" /></a>
+					<a class="upload_btn" href="#" disabled="disabled"><img src="images/btn5.jpg" /></a>
+				</li>
+				<li>
+					<a href="#"><img src="images/works2.jpg" /></a>
+					<a class="uploaded_btn" href="#"><img src="images/btn6.jpg" /><span class="uploadedcode">编号：9999</span></a>
+				</li>
+				<li>
+					<a class="nopreview" href="#"><img src="images/works2.jpg" /><span class="marks_wl"></span></a>
+					<a class="dele" href="#"><img src="images/close.png" /></a>
+					<a class="invalid_btn" href="#"><img src="images/btn7.jpg" /></a>					
+				</li>
+				<li>
+					<a class="nopreview" href="#"><img src="images/works2.jpg" /><span class="marks_wl"></span></a>
+					<a class="dele" href="#"><img src="images/close.png" /></a>
+					<a class="auditing_btn" href="#"><img src="images/btn8.jpg" /></a>
+				</li>
+			</ul>
+		</section>
+		<footer class="footer">
+			<nav>
+				<ul>
+					<li><a  class="alink1" href=""><img src="images/footerico1_1.png" />首页</a></li>
+					<li><a class="alink2" href=""><img src="images/footerico2_1.png" />制作</a></li>
+					<li class="on"><a class="alink3" href=""><img src="images/footerico3_2.png" />参赛</a></li>
+					<li><a class="alink4" href=""><img src="images/footerico4_1.png" />规则</a></li>
+				</ul>
+			</nav>
+		</footer>
+		<div class="sharemark"></div>
+		<img class="sharemarkimg" src="images/share.png" />
+		<script src="js/jquery-1.8.2.min.js"></script>
+		<script src="js/gyyx_wxImgUp.js"></script>
+		<script src="js/common.js"></script>
+		<script>
+			$(function(){
+				wx.hideOptionMenu();
+				var par = decodeURIComponent(window.location.search);
+				var openId = getQuery("OpenId",par),
+					times = getQuery("time",par),
+					signs = getQuery("sign",par),
+					from = getQuery("from",par),
+					tokens = "";
+				if(from == "share" || from == "timeline"){
+		             	alert("该页面从朋友圈进入，操作无效！请从问道公众号进入活动页面");
+		             	$(".content").css("position","relative");
+		             	var shareDiv = '<div style="position:absolute;top:0;left:0;width:100%;height:100%;"></div>';
+		             	$(".content").append($(shareDiv));
+		             	return false;
+	             	}
+				getMyWorks(showMyWorks);
+			});
+		</script>
+	</body>
+</html>
