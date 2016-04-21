@@ -43,15 +43,6 @@
                             sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
                             success: function (res) {
                                 images.localId = res.localIds;
-                                if(images.localId.length ==0 ){                               
-                                    images.localIds =  res.localIds;
-                                }else{
-                                    for(var i=0; i<res.localIds.length;i++){
-                                        images.localIds[images.localIds.length] = res.localIds[i];
-                                    }
-                                }
-                                
-
                                 setTimeout(uploadFn(), 100);
                                 //uploadFn();
 
@@ -62,13 +53,15 @@
                 function uploadFn() {
                     var i = 0, length = images.localId.length;
                     images.serverId = [];
+                     images.localIds = [];
                     function upload() {
                         
                         wx.uploadImage({
                             localId: images.localId[i],
-                            success: function (res) {
-                                i++;
+                            success: function (res) {                              
                                 images.serverId.push(res.serverId);
+                                images.localIds.push(images.localId[i].toString());
+                                i++;
                                 if (i < length) {
                                     upload();
                                 } else if (i == length) {
@@ -76,18 +69,18 @@
                                     var imgStr = "";
                                     var imgWrap = document.querySelector(_this.cfg.imgListCon);
                                     //遍历剩余元素
-                                    for (var j = 0, len = imgHtmlItem.length  ; j < len; j++) {
-                                        var code = imgHtmlItem[j].getAttribute("data-code");
-                                        images.serverId.push(code);
-                                    };
+                                    //for (var j = 0, len = imgHtmlItem.length  ; j < len; j++) {
+                                      //  var code = imgHtmlItem[j].getAttribute("data-code");
+                                       // images.serverId.push(code);
+                                    //};
                                     //渲染操作后的图片列表
                                     for (var k = 0, len = images.serverId.length  ; k < len; k++) {
-                                        var g = k + 1;
+                                        //var g = k + 1;
                                        // imgStr += _this.cfg.imgListHtml.replace("{code}", images.serverId[k]).replace("{index}", g);
-                                        imgStr += _this.cfg.imgListHtml.replace("{code}", images.serverId[k]).replace("{img}", images.localIds[k].toString());
+                                      imgStr += _this.cfg.imgListHtml.replace("{code}", images.serverId[k]).replace("{img}", images.localIds[k]);
                                     };
                                     //重构节点
-                                    imgWrap.innerHTML = imgStr;
+                                    imgWrap.innerHTML =  imgWrap.innerHTML+imgStr;
                                     //删除按钮
                                     if (_this.cfg.imglistDelBtn) {
    
