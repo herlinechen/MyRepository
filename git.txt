@@ -9,6 +9,7 @@ git diff X 	:	查看XX文件修改了哪些内容
 git log 		:	查看历史记录
 git reset --hard HEAD^
 git reset --hard HEAD~ 	:	回退到上一个版本
+git reset --hard 23d328		: 	回退到23d328版本
 cat XX 	:	查看XX文件内容
 git reflog 	:	查看历史记录的版本号ID
 git checkout -- XX 	:	把XX文件在工作区的修改全部撤销
@@ -20,7 +21,8 @@ git clone git@github.com:herlinechen/MyRepository.git  	:	从远程库中克隆
 git checkout -b dev 	:	创建dev分支，并切换到dev分支上
 git branch	:	查看当前所有的分支
 git checkout master	:	切换回master分支
-git merge dev 	:	在当前的分支上合并dev分支
+git merge dev 	:	在当前的分支上合并dev分支，Fast forward模式，看不出来曾经做过合并
+git merge --no-ff -m "XXX" dev 	:	强制禁用Fast forward模式，Git就会在merge时生成一个新的commit, 从分支历史上就可以看出分支信息
 git branch -d dev	:	删除dev分支
 git branch name 	:	创建分支
 git stash 	:	把当前的工作隐藏起来，等以后恢复现场后继续工作
@@ -30,5 +32,38 @@ git stash drop	:	删除文件
 git stash pop 	: 	恢复文件的同时也删除文件
 git remote	:	查看远程库的信息
 git remote -v	:	查看远程库的详细信息
-git push origin master 	:	Git会把master分支推送到远程库对应的远程分支上。
 
+git merge VS  git rebase
+	git merge 	:	把两条不同分支历史的所有提交合并成一条线，并在“末端”打个结，即生成一次合并提交。最后形成一条单一的提交线。
+	git rebase	:	相当于把分叉的两条历史提交线中的一条，每一次提交都捡选出来，在另一条提交线上提交。最后也形成一条单一的提交线。
+git pull 默认行为是 git fetch + git merge
+git pull --rebase 则是 git fetch + git rebase
+
+git fetch	:	用来查看其他人的进程，因为它取回的代码对你本地的开发代码没有影响。默认情况下，git fetch取回所有分支的更新。如果只想取回特定分支的更新，可以指定分支名。
+git fetch <远程主机名> <分支名>	
+git fetch origin master 		:	取回origin主机的master分支
+所取回的更新，在本地主机上要用“远程主机名/分支名”的形式读取。比如origin主机的master，就要用origin/master读取。
+
+git branch -r 	:	查看远程分支
+	origin/master
+git branch -a 	:	查看所有分支
+	*master
+	remotes/origin/master
+
+取回远程主机的更新以后，可以在它的基础上，使用git checkout命令创建一个新的分支。
+git checkout -b newBranch origin/master 	:	在origin/master的基础上，创建一个新分支
+git merge origin/master
+git rebase origin/master 	:	在本地分支上合并远程分支。
+
+git pull 		：	用于取回远程主机某个分支的更新，再与本地的指定分支合并。
+git pull <远程主机名> <远程分支名>:<本地分支名>
+git pull origin master 	:	取回origin主机的master分支，并与本地的master分支合并
+git pull origin next 		:	取回origin主机的next分支，并与本地的master分支合并
+git pull origin next:master 		:	取回origin主机的next分支，并与本地的master分支合并
+等同于
+git fetch origin
+git merge origin/next
+
+git push 	:	用于将本地分支的更新，推送到远程主机。
+git push <远程主机名>  <本地分支名>:<远程分支名>
+git push -u origin master 	:	将本地master分支推送到origin主机，同时指定origin为默认主机，后面就可以不加任何参数使用git push了。
