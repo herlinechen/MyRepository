@@ -1,0 +1,86 @@
+﻿@charset "utf-8";
+body,div,p, ul,ol,li,h1,h2,h3,h4,h5,h6,span,a,img{margin:0;padding:0;}
+body{background-color:#eee;}
+img{display:block;width:100%;}
+ul, li{list-style:none;}
+input, button{border:none;}
+a{color:transparent;text-decoration: none;}
+.fl{float:left;}
+.fr{float:right;}
+.clearfix{zoom:1;}
+.clearfix:after{content:" "; display:block;height:0;clear:both;visibility:hidden;}
+
+@media screen and (min-width:320px) and (max-width:359px){
+	html{font-size:100%;}
+}
+@media screen and (min-width:360px) and (max-width:374px){
+	html{font-size:112.5%;}
+}
+@media screen and (min-width:375px) and (max-width:413px){
+	html{font-size:117%;}
+}
+@media screen and (min-width:414px) and (max-width:479px){
+	html{font-size:129%;}
+}
+@media screen and (min-width:480px) and (max-width:567px){
+	html{font-size:150%;}
+}
+@media screen and (min-width:568px) and (max-width:767px){
+	html{font-size:177.5%;}
+}
+@media screen and (min-width:768px) and (max-width:959px){
+	html{font-size:240%;}
+}
+@media screen and (min-width:960px) and (max-width:1023px){
+	html{font-size:300%;}
+}
+@media screen and (min-width:1024px){
+	html{font-size:320%;}
+}
+
+/*******  顶部样式  ********/
+body {position:relative;background:url(../images/bj.jpg);width: 100%;background-size: 100%;}
+.kuang {width:100%; position: relative;}
+.header{position:relative;height:3rem;line-height:3rem;font-size:1.25rem;background:#212329;color:#fff;overflow:hidden;}
+.header a{position:absolute;width:7.5%;left:2%;top:50%;-moz-transform: translate(0,-50%);-webkit-transform: translate(0,-50%);-ms-transform: translate(0,-50%);transform: translate(0,-50%);}
+.header span{float:left;width:74%;margin-left:20.6%;}
+.main {position:relative;overflow:hidden;padding-bottom:4.9rem;}
+.logoimgs{overflow:hidden;}
+.logo_img{float:left;margin-top:5%;margin-left: 5%;width:17.5%;}
+.word_img {float:left;margin-top: 7.3%;margin-left: 1.875%;width: 70%;}
+.ljxz_img {float:right;margin-top: -16%;margin-right: 5%;width: 27.5%;}
+
+
+/********    列表头  ********/
+.main_list_title {overflow: hidden;margin-top: 4.6875%; width: 100%;}
+.title_word{overflow:hidden;border-bottom: 1px solid #859094;}
+.title_word li{ float: left;width: 25%;height: 2rem;line-height: 2rem;font-size: 0.875rem;text-align: center;border-bottom: 2px solid transparent;color: #616e7e;}
+
+/*******     列表内容  *******/
+.loading, .loaded{position:absolute;width:100%;bottom:2.9rem;display:block;height:2rem;line-height:2rem;font-size:0.875rem;color: #616e7e;text-align:center;}
+.loaded{display:none;}
+.loading img{display:inline-block;width:4%;margin-right:2%;}
+.nodata{border-bottom: 1px solid #859094;width: 90%;margin-left:5%;overflow: hidden;height:3rem;line-height:3rem;font-size:0.875rem;color: #616e7e;}
+.word {  border-bottom: 1px solid #859094;width: 90%;margin-left:5%;overflow: hidden;}
+.word span{height:3rem;line-height:3rem;font-size:0.875rem;color: #616e7e;}
+.word  .wanfa {  float: left;width: 14%;height: 1.125rem;line-height: 1.125rem;background-color: #616e7e;text-align: center;  margin:5% 5% 0 0;color:#f2f0ef;}
+.word .neirong {  float: left;width: 62%;color: #616e7e;}
+.word .data{float: right;width: 15%;color: #616e7e; }
+.title_word li.on {border-color: #616e7e;color: #35404e;}
+
+
+/*底部*/
+.footer{position:fixed;bottom:0;left:0;width:100%;height:4.8rem;background:url(../images/dibu.jpg) no-repeat;background-size:100% 100%;overflow:hidden;}
+.shareitem{float:left;width:33%;}
+.shareitem img{display:block;width:37%;height:auto;margin:5% auto 0;}
+.shareitem span{display:block;text-align:center;font-size:0.875rem;line-height:1.5rem;color:#b2bcc5;}
+.showWx{position:absolute;width:100%;height:100%;top:100%;left:0;background:url(../images/dibu.jpg) no-repeat;background-size:100% 100%;z-index:999;}
+.shareitem2{float:left;padding-top:1%;overflow: hidden;}
+.si2_1{width:45%;}
+.si2_2{width:55%;}
+.shareitem2 img{float:left;height:auto;margin-left:5%;margin-top:5%;}
+.si2_1 img{width:30%;}
+.si2_2 img{width:25%;}
+.shareitem2 span{float:left;margin-left:2%;font-size:0.75rem;line-height:1.25rem;color:#b2bcc5;}
+.wx_fu{display:none;position:fixed;width:40%;height:0;padding-top:40%;bottom:4.8rem;left:5%;background-image:url(../images/wx_fu.jpg);background-repeat: no-repeat;background-size:contain;}
+.wx_dy{display:none;position:fixed;width:40%;height:0;padding-top:40%;bottom:4.8rem;right:5%;background-image:url(../images/wx_dy.jpg);background-repeat: no-repeat;background-size:contain;}
